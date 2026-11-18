@@ -1,0 +1,20 @@
+{
+  "model_version": "v1",
+  "saved_on": "2026-11-17",
+  "task": "binary",
+  "class_names": {
+    "0": "Normal",
+    "1": "Attack"
+  },
+  "trained_on": [
+    "IDS2025"
+  ],
+  "pipeline": {
+    "rf_xgb": "clean -> imputer -> predict",
+    "autoencoder": "clean -> imputer -> scaler -> reconstruction error > threshold"
+  },
+  "drift": {
+    "detector": "ADWIN",
+    "params": {}
+  }
+}
